@@ -44,7 +44,7 @@ add_library(qtunits ${QTUNITS_LIBRARY_TYPE} ${SRC} ${HDR} ${MOC_SRC})
 #
 
 #Qt modules
-target_link_libraries(qtunits Qt5::Core Qt5::Widgets)
+target_link_libraries(qtunits Qt6::Core Qt6::Widgets)
 
 install(TARGETS qtunits
   LIBRARY DESTINATION lib

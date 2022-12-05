@@ -53,8 +53,7 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -O3 -fomit-frame-pointer -finlin
 #
 
 # Qt
-find_package(Qt5Core REQUIRED)
-find_package(Qt5Widgets REQUIRED)
+find_package(Qt6 COMPONENTS Core Widgets REQUIRED)
 set(CMAKE_AUTOMOC ON)
 
 # Boost
