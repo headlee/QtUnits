@@ -37,7 +37,7 @@ else()
 endif()
 
 add_library(qtunits ${QTUNITS_LIBRARY_TYPE} ${SRC} ${HDR} ${MOC_SRC})
-
+target_include_directories(qtunits PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 #
 # Linking
