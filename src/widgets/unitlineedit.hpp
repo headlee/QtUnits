@@ -46,12 +46,12 @@ namespace qt { namespace units {
             _lineEdit->setReadOnly(readOnly);
         }
 
-    protected:
         virtual QWidget *valueWidget()
         {
             return _lineEdit;
         }
 
+    protected:
         virtual void onValueChange(UnitType &newValue)
         {
             _lineEdit->setText(QString::number(newValue.value()));
