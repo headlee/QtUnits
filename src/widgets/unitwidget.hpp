@@ -26,6 +26,7 @@
 #include <QWidget>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QLineEdit>
 #include <QDoubleSpinBox>
 #include "iquantity.hpp"
 
@@ -45,6 +46,9 @@ namespace qt { namespace units {
         void emitValueChanged(IQuantity *value) { emit valueChanged(value); }
 
         void connectValueChanged(QDoubleSpinBox *widget)
+            { connect(widget, SIGNAL(valueChanged(double)), this, SLOT(onEdit(double))); }
+
+        void connectValueChanged(QLineEdit *widget)
             { connect(widget, SIGNAL(valueChanged(double)), this, SLOT(onEdit(double))); }
 
     public slots:

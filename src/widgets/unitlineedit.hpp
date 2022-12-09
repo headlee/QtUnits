@@ -39,6 +39,9 @@ namespace qt { namespace units {
             UnitWidget<UnitType>(parent)
         {
             _lineEdit = new QLineEdit();
+
+             UnitWidgetBase::connectValueChanged(_lineEdit);
+
         }
 
         virtual void setReadOnly(bool readOnly)
