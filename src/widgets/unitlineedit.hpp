@@ -57,7 +57,7 @@ namespace qt { namespace units {
     protected:
         virtual void onValueChange(UnitType &newValue)
         {
-            _lineEdit->setText(QString::number(newValue.value()));
+            _lineEdit->setText(QString::number(newValue.value(), 'f', 4));
         }
     };
 
