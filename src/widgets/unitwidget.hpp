@@ -49,7 +49,16 @@ namespace qt { namespace units {
             { connect(widget, SIGNAL(valueChanged(double)), this, SLOT(onEdit(double))); }
 
         void connectValueChanged(QLineEdit *widget)
-            { connect(widget, SIGNAL(valueChanged(double)), this, SLOT(onEdit(double))); }
+        {
+            connect(widget, &QLineEdit::editingFinished, this, [this]()
+                    {
+                        auto edit = qobject_cast<QLineEdit*>(sender());
+                        if( edit != NULL ) 
+                        {
+                            onEdit(edit->text().toDouble());
+                        }
+                    });
+        }
 
     public slots:
         void onEdit(double displayValue) { onEditImplementation(displayValue); }
