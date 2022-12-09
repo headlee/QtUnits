@@ -49,7 +49,7 @@ namespace qt { namespace units {
             _lineEdit->setReadOnly(readOnly);
         }
 
-        virtual QWidget *valueWidget()
+        QLineEdit* getLineEdit()
         {
             return _lineEdit;
         }
@@ -58,6 +58,11 @@ namespace qt { namespace units {
         virtual void onValueChange(UnitType &newValue)
         {
             _lineEdit->setText(QString::number(newValue.value(), 'f', 4));
+        }
+
+        virtual QWidget *valueWidget()
+        {
+            return _lineEdit;
         }
     };
 
