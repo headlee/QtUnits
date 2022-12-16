@@ -68,7 +68,7 @@ namespace qt { namespace units {
         virtual void onValueChange(UnitType &newValue)
         {
             _spinBox->setValue(newValue.value());
-            _spinBox->setDecimals(std::max(0, 4-sc_exp(newValue.value())));
+            // _spinBox->setDecimals(std::max(0, 4-sc_exp(newValue.value())));
         }
     };
 
