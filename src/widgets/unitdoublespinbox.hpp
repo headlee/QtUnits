@@ -55,6 +55,10 @@ namespace qt { namespace units {
             _spinBox->setReadOnly(readOnly);
         }
 
+        QDoubleSpinBox* getSpinBox() {
+            return _spinBox;
+        }
+
     protected:
         virtual QWidget *valueWidget()
         {
